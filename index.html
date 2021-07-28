@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ren2</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+<style>
+	#a1 a:link,a:visited{color: blue;}
+	#a1 a+a:link,a+a:visited{color: black;}
+	.dropdown {position: relative;display: inline-block;}
+	.dropdown-content {width: 100px; height: 100px; display: none;position: absolute;background-color: #f9f9f9;}
+	.dropdown:hover .dropdown-content {display: block;}
+	#img1{width: 10px;height: 10px; float: right;background-image: url(images/8.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center;margin-top: 23%;}
+	.top{width: 700px;list-style-type: none;overflow: hidden;float: right;line-height: 80px;margin-right: 1%;}
+	.top li{width: 85px; float: left;margin-right: 64px;font-size: 18px;}
+	.top li+li+li+li+li{margin-right: 0px;}
+	.top li a{display: block; text-align: center; text-decoration: none;}
+	.top li a:link,a:visited{color: black;}
+	.top li a:hover{padding-bottom: -5px; border-bottom:2px solid #3EC3EC;}
+	.active{padding-bottom: -5px; border-bottom:2px solid #3EC3EC;}
+	.bg1{margin: 0 auto;background-image: url(images/2.png);background-repeat: no-repeat;background-size: cover;background-position:center center;width: 1280px;height: 400px;margin-top: 1%;overflow: hidden;}
+	#chan img{display: block;clear: both;margin:0 auto;}
+	#chan div{box-shadow: 10px 10px 10px darkgrey}
+	#chan .ti{text-align: center;font-size: 24px;margin-top: 21px;}
+	#chan .duan{font-size: 14px;color: darkgray;margin-top: 25px;}
+	.bg2{margin: 0 auto;background-image: url(images/4.png);background-repeat: no-repeat;background-size: cover;background-position: center center;width: 1280px;height: 674px;margin-top: 84px;overflow: hidden;}
+	.swiper-container{width: 1200px;height: 406px;margin-top: 25px;background-color: white;overflow: hidden;}
+	.swiper-slide{width: 1200px;height: 406px;}
+	.swiper-button-next,.swiper-button-prev{color: gray;}
+	.tr{width: 1240px;height: 150px;margin-top: 22px;margin-left: 40px;}
+	.td{float: left;width: 580px;height: 150px;margin-left: 22px;}
+</style>
+</head>
+
+<body>
+	<header style="width: 100%;height: 40px;position: relative">
+		<div>
+			<div style="float: left;line-height: 40px;margin-left: 2%;">咨询热线：XXXX-XXXX-XXX</div>
+			<div style="width: 150px;height: 40px; float: right;margin-right: 2%;line-height: 40px;">
+				<div id="a1" style="float: left;margin-left: 1%"><a href="#">登录</a>&nbsp;&#124;&nbsp;<a href="#">注册</a></div>
+				<ul class="dropdown" style="float: right;margin-right: 1%;">微信公众号
+					<div id="img1"></div>
+					<li class="dropdown-content">
+						公众号二维码
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
+	<div style="width: 100%; height: 80px;border-top: 1px solid #B3B3B3;">
+		<div style="float: left;margin-left: 2%;line-height: 80px;"><img src="images/1.png" alt=""></div>
+		<ul class="top">
+			<li><a class="active" href="index.html">首页</a></li>
+			<li><a href="#">热点资讯</a></li>
+			<li><a href="#">资产大厅</a></li>
+			<li><a href="#">商务合作</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+	</div>
+	
+	
+	<div class="bg1">
+		<div>
+			<div style="font-size: 80px;color: white;margin-top: 45px;margin-left: 21%;user-select: none;">乐无止境</div>
+			<div style="font-size: 106px;color: white;margin-left: 40%;user-select: none;">音有知己</div>
+			<div style="text-align: center;font-size: 28px;color: cornflowerblue;user-select: none;">做有创新态度的不良资产处置服务平台</div>
+			<div style="text-align: center;font-size: 14px;color: darkgray;user-select: none;">The Innovatlve Attitude Of The Non-Performing Assets Disposal Services Platform</div>
+		</div>
+	</div>
+	
+	<div style="text-align: center;font-size: 24px;margin-top: 62px;user-select: none;"><span>产品</span><span style="color: aqua;">服务</span></div>
+	<div style="text-align: center;font-size: 12px;margin-top: 19px;user-select: none;color: darkgray">We provide you with the best products and services.</div>
+	
+	<hr style="margin-top: 30px;" size="2px" width="3%" color="#57C5E7">
+	
+	<div id="chan" style="width: 1280px; height: 400px; margin: auto; margin-top: 40px;">
+		<div style="width: 25%; height: 400px;float: left;margin-left: 6%;">
+			<img src="images/3.png" alt="">
+			<p class="ti">专业化资讯服务</p>
+			<p class="duan">企业的不良资产是指企业尚未处理的资产净损失和潜亏（资金）挂账，以及按财务会计制度定应提未提资产减值准备的各类</p>
+		</div>
+		<div style="width: 25%; height: 400px;float: left;margin-left: 6%;">
+			<img src="images/3.png" alt="">
+			<p class="ti">专业化资讯服务</p>
+			<p class="duan">企业的不良资产是指企业尚未处理的资产净损失和潜亏（资金）挂账，以及按财务会计制度定应提未提资产减值准备的各类</p>
+		</div>
+		<div style="width: 25%; height: 400px;float: left;margin-left: 6%;">
+			<img src="images/3.png" alt="">
+			<p class="ti">专业化资讯服务</p>
+			<p class="duan">企业的不良资产是指企业尚未处理的资产净损失和潜亏（资金）挂账，以及按财务会计制度定应提未提资产减值准备的各类</p>
+		</div>
+	</div>
+	
+	<div class="bg2">
+		<div style="color: white;font-size: 28px;text-align: center;margin-top: 60px;">成功案例</div>
+		<div style="color: darkgray;font-size: 12px;text-align: center;margin-top: 10px;">Successful cases show</div>
+		<hr style="margin-top: 20px;" size="1px" width="100px" color="#FFC828">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
+					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
+				</div>
+				<div class="swiper-slide">
+					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
+					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
+				</div>
+				<div class="swiper-slide">
+					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
+					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
+				</div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+	</div>
+	
+	<div style="text-align: center;font-size: 28px;margin-top: 75px;">公司新闻</div>
+	<div style="text-align: center;font-size: 12px;margin-top: 14px;">Company news</div>
+	<hr style="margin-top: 18px;" size="1px;" width="100px" color="#FFC828">
+	
+	<div style="margin: 0 auto;display: block; width: 1280px;height: 330px;margin-top: 41px;">
+		<div class="tr">
+			<div class="td">
+				<div style="width: 200px;height: 150px;float: left;display: block;">
+					<img src="images/5.png" alt="">
+				</div>
+				<div style="margin-left: 16px;float: left;">
+					<p style="font-size: 18px;">用不起好的吹风机，就不配有一头秀发了？</p>
+					<p style="font-size: 12px;color: darkgray;margin-top: 5px;">发表于：2016-5-15 10:42</p>
+					<p style="font-size: 14px;color: darkgrey;width: 360px;overflow: hidden;text-overflow: ellipsis;margin-top: 10px;">用不起好几千的吹风机，就不配有一头秀发了？用不起好几千的吹风机，就不配有一头秀发了？用不起好几千的吹风机，就不配有一头秀发了？</p>
+					<button style="float: right;border-color: orange;color: orange;background-color: white;border-radius: 10%;margin-top: 5px;">+ 阅读全文</button>
+				</div>
+			</div>
+			<div class="td">
+				<div style="width: 200px;height: 150px;float: left;display: block;">
+					<img src="images/5.png" alt="">
+				</div>
+				<div style="margin-left: 16px;float: left;">
+					<p style="font-size: 18px;">吃货研究所招实习生啦！</p>
+					<p style="font-size: 12px;color: darkgray;margin-top: 5px;">发表于：2016-5-15 10:42</p>
+					<p style="font-size: 14px;color: darkgrey;width: 360px;overflow: hidden;text-overflow: ellipsis;margin-top: 10px;">吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦！</p>
+					<button style="float: right;border-color: orange;color: orange;background-color: white;border-radius: 10%;margin-top: 5px;">+ 阅读全文</button>
+				</div>
+			</div>
+		</div>
+		<div class="tr">
+			<div class="td">
+				<div style="width: 200px;height: 150px;float: left;display: block;">
+					<img src="images/5.png" alt="">
+				</div>
+				<div style="margin-left: 16px;float: left;">
+					<p style="font-size: 18px;">吃货研究所招实习生啦！</p>
+					<p style="font-size: 12px;color: darkgray;margin-top: 5px;">发表于：2016-5-15 10:42</p>
+					<p style="font-size: 14px;color: darkgrey;width: 360px;overflow: hidden;text-overflow: ellipsis;margin-top: 10px;">吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦！</p>
+					<button style="float: right;border-color: orange;color: orange;background-color: white;border-radius: 10%;margin-top: 5px;">+ 阅读全文</button>
+				</div>
+			</div>
+			<div class="td">
+				<div style="width: 200px;height: 150px;float: left;display: block;">
+					<img src="images/5.png" alt="">
+				</div>
+				<div style="margin-left: 16px;float: left;">
+					<p style="font-size: 18px;">吃货研究所招实习生啦！</p>
+					<p style="font-size: 12px;color: darkgray;margin-top: 5px;">发表于：2016-5-15 10:42</p>
+					<p style="font-size: 14px;color: darkgrey;width: 360px;overflow: hidden;text-overflow: ellipsis;margin-top: 10px;">吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦吃货研究所招实习生啦！吃货研究所招实习生啦！吃货研究所招实习生啦！</p>
+					<button style="float: right;border-color: orange;color: orange;background-color: white;border-radius: 10%;margin-top: 5px;">+ 阅读全文</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="margin-top: 70px;">
+		<button style="display: block;width: 110px;height: 37px;margin: 0 auto;border-radius: 7%;background-color: #2B9FFF;border-color: #2B9FFF;color: white;font-size: 18px;">查看更多</button>
+	</div>
+	
+	<footer style="margin-top: 76px;width: 1280px;height: 300px;">
+		<div></div>
+	</footer>
+	
+<script src="js/swiper-bundle.min.js"></script>
+<script>
+	var swiper = new Swiper('.swiper-container',{
+			initialSlide :0,
+			direction : 'horizontal',
+			speed : 2000,
+			spaceBetween: 0,
+			loop : true,
+			centeredSlides: true,
+			autoplay: true,
+			autoplay:{
+				disableOnInteraction: false,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+</script>
+</body>
+</html>
