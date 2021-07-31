@@ -6,6 +6,7 @@
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="css/swiper-bundle.min.css" rel="stylesheet" type="text/css">
 <style>
+	.tp{position: fixed;top:0;background-color: white;z-index: 99;}
 	#a1 a:link,a:visited{color: blue;}
 	#a1 a+a:link,a+a:visited{color: black;}
 	.dropdown {position: relative;display: inline-block;}
@@ -52,7 +53,7 @@
 		</div>
 	</header>
 	
-	<div style="width: 100%; height: 80px;border-top: 1px solid #B3B3B3;">
+	<div id="tp" style="width: 100%; height: 80px;border-top: 1px solid #B3B3B3;">
 		<div style="float: left;margin-left: 2%;line-height: 80px;"><img src="images/1.png" alt=""></div>
 		<ul class="top">
 			<li><a class="active" href="#">首页</a></li>
@@ -175,11 +176,13 @@
 		</div>
 	</div>
 	
-	<div style="margin-top: 70px;">
+	<div id="b" style="margin-top: 70px;">
 		<button id="btn1" style="display: block;width: 110px;height: 37px;margin: 0 auto;border-radius: 7%;background-color: #2B9FFF;border-color: #2B9FFF;color: white;font-size: 18px;">查看更多</button>
 	</div>
 	
-	<footer style="margin-top: 76px;width: 100%;height: 300px;background-color: #2B2929;">
+
+	
+	<footer id="footer" style="margin-top: 76px;width: 100%;height: 300px;background-color: #2B2929;">
 		<div style="margin: 0 auto;width: 1280px;height: 300px;">
 			<div style="display: block;margin: 0 auto;color: white;background-color: black;"><div>
 				<div style="float: left;width: 180px;height: 200px;display: block;border-right:1px solid #D3D3D3;margin-left: 70px;margin-top: 39px;">
@@ -223,11 +226,10 @@
 			</div>
 			</div></div>
 		</div>
+		<div style="background-color: black;height: 40px;width: 100%;">
+			<div style="font-size: 14px;color: white;text-align: center;line-height: 40px;">XXXXXXXXXXXXXXXXXXXXXXX</div>
+		</div>
 	</footer>
-	<div style="background-color: black;height: 40px;width: 100%;">
-	<div style="font-size: 14px;color: white;text-align: center;line-height: 40px;">XXXXXXXXXXXXXXXXXXXXXXX</div>
-	</div>
-	
 	
 <script src="js/swiper-bundle.min.js"></script>
 <script>
@@ -345,10 +347,11 @@
 					alert('没有更多')
 				}
 		
-		$('.btn2').on('click',function(){
-			$(this).css('color','green');
-			$(this).off('click');
-			})
+			$('.btn2').on('click',function(){
+				$(this).css('color','green');
+				$(this).off('click');
+				})
+			
 		});
 		
 		
@@ -356,15 +359,52 @@
 		$('.btn2').on('click',function(){
 			$(this).css('color','green');
 			$(this).off('click');
-		})
+		});
 		
 		$('html').dblclick(function(){
 			$('p').css('color','red');
 		})
-		
-		
-		
-		
+		$(function(){
+			resize();
+			$(window).resize(function(){resize();});
+		});
+		function resize(){
+			alert(' width: '+$(window).width() + ' height: ' + $(window).height());
+		};
+		$(window).scroll(function(){
+			var hei = $(window).scrollTop();
+			if(hei > 1237){
+				$('#tp').addClass('tp')
+			}else{
+				$('#tp').removeClass('tp')
+			}
+		});
+		$('#footer div:eq(22)').click(function(){
+			$('html').animate({scrollTop:0},1000); 
+			$('.top li:eq(1)').addClass('active');
+		});
+		$("#b").append(function(){
+			var i = ($('input').length);
+			if (i<2){
+				var input =
+			'<div style="margin-left: 45%;">'+
+				'<input id="ip1" type="text" style="border: 1px solid #000000"><br/>'+
+				'<input id="ip2" type="text" style="border: 1px solid #000000"><br/>'+
+				'<button id="ip3">提交</button>'+
+			'</div>';
+				$('#b').append(input);};	
+			});
+		$('#ip3').click(function(){
+			if($('#ip1').val()==''){
+				alert('第一输入框为空')
+			}else{
+				if($('#ip1').val() == $('#ip2').val()){
+					alert('内容一致')
+				}else{
+					$('#ip2').val($('#ip1').val());
+				}
+			}
+		});
 	});
 </script>
 </body>
