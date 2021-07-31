@@ -102,20 +102,7 @@
 		<div style="color: darkgray;font-size: 12px;text-align: center;margin-top: 10px;">Successful cases show</div>
 		<hr style="margin-top: 20px;" size="1px" width="100px" color="#FFC828">
 		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
-					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
-				</div>
-				<div class="swiper-slide">
-					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
-					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
-				</div>
-				<div class="swiper-slide">
-					<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;"><p>成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍成功案例的详情介绍asd</p></div>
-					<img style="width: 600px;height: 406px;float: right;" src="images/3.png" alt="">
-				</div>
-			</div>
+			<div class="swiper-wrapper"></div>
 			<div class="swiper-button-next"></div>
 			<div class="swiper-button-prev"></div>
 		</div>
@@ -231,25 +218,8 @@
 		</div>
 	</footer>
 	
-<script src="js/swiper-bundle.min.js"></script>
-<script>
-	var swiper = new Swiper('.swiper-container',{
-			initialSlide :0,
-			direction : 'horizontal',
-			speed : 2000,
-			spaceBetween: 0,
-			loop : true,
-			centeredSlides: true,
-			autoplay: true,
-			autoplay:{
-				disableOnInteraction: false,
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-		});
-</script>
+
+
 <script type="text/javascript" charset="utf-8"  src="live2d/lib/L2Dwidget.min.js"></script>
 <script type="text/javascript" charset="utf-8"  src="live2d/lib/L2Dwidget.0.min.js"></script>
 <script type="text/javascript">
@@ -384,15 +354,13 @@
 			$('.top li:eq(1)').addClass('active');
 		});
 		$("#b").append(function(){
-			var i = ($('input').length);
-			if (i<2){
 				var input =
 			'<div style="margin-left: 45%;">'+
 				'<input id="ip1" type="text" style="border: 1px solid #000000"><br/>'+
 				'<input id="ip2" type="text" style="border: 1px solid #000000"><br/>'+
 				'<button id="ip3">提交</button>'+
 			'</div>';
-				$('#b').append(input);};	
+				$('#b').append(input);	
 			});
 		$('#ip3').click(function(){
 			if($('#ip1').val()==''){
@@ -405,7 +373,53 @@
 				}
 			}
 		});
+		$.ajax({
+			url:'http://203.195.153.221:30033/banner/getBanner',//请求地址，由后台决定
+			method:'post',//请求类型get、post，由后台决定
+			type:'json',//返回的数据类型
+			data:{//提交的数据，由后台决定，例如登录时需要提交账号密码
+			  bannerId:'57c6d390-879f-11eb-a53f-27a843237584'
+			},
+			success:function(res){//请求成功时的操作
+			  console.log(res);
+			  var data = res.data.mainBanner;
+			  console.log(data);
+				for(var i=0;i<data.length;i++){
+					var temp = '';
+					temp = '<div class="swiper-slide">'+
+					'<div style="width: 500px;height: 320px;float: left;user-select: none;font-size: 18px;color: darkgray;margin-left: 91px;margin-top: 74px;">'+
+						'<p>'+data[i].productLinkValue + data[i].productLinkValue3+'</p>'+
+					'</div>'+
+					'<img style="width: 600px;height: 406px;float: right;" src="'+data[i].productUrl+'" alt="">'+
+				'</div>'	
+			
+			$('.swiper-wrapper').append(temp);
+				}
+			},
+			error:function(err){//请求失败时的操作
+			  alert(err);
+			}
+		  });
 	});
+</script>
+<script src="js/swiper-bundle.min.js"></script>
+<script>
+	var swiper = new Swiper('.swiper-container',{
+			initialSlide :0,
+			direction : 'horizontal',
+			speed : 2000,
+			spaceBetween: 0,
+			loop : true,
+			centeredSlides: true,
+			autoplay: true,
+			autoplay:{
+				disableOnInteraction: false,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
 </script>
 </body>
 </html>
